@@ -1,0 +1,11 @@
+version: '3'
+services:
+ nginx:
+  image: nginx
+  container_name: helloapp
+  build: 
+   context: frontend
+  ports:
+   - "3000:80"
+  volumes:
+   - "$PWD/frontend:/usr/share/nginx/html"

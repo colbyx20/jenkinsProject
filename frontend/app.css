@@ -1,0 +1,15 @@
+*{
+ box-sizing: border-box;
+}
+
+.navbar{
+ display: flex;
+ justify-content: start;
+ margin: 10px;
+ padding: 14px 16px;
+ 
+}
+
+a {
+ text-decoration:none;
+}
