@@ -9,3 +9,20 @@ services:
    - "3000:80"
   volumes:
    - "$PWD/frontend:/usr/share/nginx/html"
+  networks:
+   - client
+
+ jenkins:
+  container_name: jenkins2
+  image: jenkins/jenkins
+  build: 
+   context: jenkinsdemo
+  ports: 
+   - "8080:8080"
+  volumes:
+   - "$PWD/jenkinsdemo/jenkins_home:/var/jenkins_home"
+  networks:
+   - client
+
+networks:
+ client:

@@ -1,0 +1,12 @@
+Started on Nov 15, 2023, 9:43:00 PM
+Using strategy: Default
+[poll] Last Built Revision: Revision c3dda65fd764a40ac3c1f8c7ad04001f9bc72b0c (refs/remotes/origin/main)
+The recommended git tool is: NONE
+No credentials specified
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+ > git ls-remote -h -- https://github.com/colbyx20/jenkinsProject.git # timeout=10
+Found 1 remote heads on https://github.com/colbyx20/jenkinsProject.git
+[poll] Latest remote head revision on refs/heads/main is: 9e0111706ad1f19f78f17604cd3aadb80765f2f2
+Done. Took 0.15 sec
+Changes found
