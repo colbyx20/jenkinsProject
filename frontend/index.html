@@ -18,9 +18,11 @@
         Press Button 
         <div id="counter"></div>
         <button onclick="incrementCounter();">Click ME!!</button>
+        <button onclick="decrementCounter();">Decrement Counter!</button>
     </div>
 
     <script>
+
         let counter = 0;
         document.getElementById("counter").innerHTML = counter;
 
@@ -28,6 +30,12 @@
             counter += 1;
         document.getElementById("counter").innerHTML = counter;
         }
+
+        function decrementCounter(){
+            counter -= 1;
+            document.getElementById("counter").innerHTML = counter; 
+        }
+
     </script>
 
 
