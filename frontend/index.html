@@ -7,11 +7,29 @@
     <title>Docker Website</title>
 </head>
 <body>
-        <div class="top">
+    <div class="top">
 	  <h1>Welcome to my Docker Application! </h1>
 	  <h2>NGINX Docker image modified!</h1>
 	  <span>SSH connection Success to GitHub</span><br/>
 	  <span>Jenkins Success on pull REQ, still issue with WebHooks</span><br/>
-        </div>
+    </div>
+    <hr/>
+    <div>
+        Press Button 
+        <div id="counter"></div>
+        <button onclick="incrementCounter();">Click ME!!</button>
+    </div>
+
+    <script>
+        let counter = 0;
+        document.getElementById("counter").innerHTML = counter;
+
+        function incrementCounter(){
+            counter += 1;
+        document.getElementById("counter").innerHTML = counter;
+        }
+    </script>
+
+
 </body>
 </html>
