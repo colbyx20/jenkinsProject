@@ -6,7 +6,7 @@ services:
   build: 
    context: frontend
   ports:
-   - "3000:80"
+   - "3001:80"
   volumes:
    - "$PWD/frontend:/usr/share/nginx/html"
   networks:
@@ -15,14 +15,20 @@ services:
  jenkins:
   container_name: jenkins2
   image: jenkins/jenkins
-  build: 
-   context: jenkinsdemo
   ports: 
    - "8080:8080"
   volumes:
    - "$PWD/jenkinsdemo/jenkins_home:/var/jenkins_home"
   networks:
    - client
+ 
+ node:
+  image: "node:8"
+  build:
+   context: ./backend
+  working_dir: /home/app
+  command: "npm run dev"
+  
 
 networks:
  client:

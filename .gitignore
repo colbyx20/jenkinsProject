@@ -1,2 +1,4 @@
 jenkinsdemo/
-jenkinsdemo/jenkins_home/
+jenkinsdemo/jenkins_home
+backend/
+backend/node_modules
