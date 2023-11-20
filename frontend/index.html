@@ -49,8 +49,43 @@
             counter = 0;
             document.getElementById("counter").innerHTML = 0; 
         }
-
     </script>
+
+   <script>
+    const sendMessage = async (e) => {
+        e.preventDefault();
+        const messageInput = document.getElementById('message');
+        const message = messageInput.value;
+        
+
+        try {
+            const response = await fetch('http://localhost:4000/message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                const data = await response.json();
+                console.log('Response:', data);
+            } else {
+                const data = await response.text();
+                console.log('Response:', data);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    };
+
+    document.getElementById('submitBtn').addEventListener('click', sendMessage);
+   </script>
 
 
 </body>
