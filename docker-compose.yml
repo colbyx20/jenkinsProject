@@ -6,9 +6,9 @@ services:
   build: 
    context: frontend
   ports:
-   - "3001:80"
+   - "3002:80"
   volumes:
-   - "$PWD/frontend:/usr/share/nginx/html"
+   - "$PWD/frontend/index.html:/usr/share/nginx/html/index.html"
   networks:
    - client
 
@@ -28,7 +28,8 @@ services:
    context: ./backend
   working_dir: /home/app
   command: "npm run dev"
-  
+  networks:
+   - client 
 
 networks:
  client:
